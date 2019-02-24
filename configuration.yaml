@@ -1,0 +1,66 @@
+homeassistant:
+  # Name of the location where Home Assistant is running
+  name: Home
+  # Location required to calculate the time the sun rises and sets
+  latitude: !secret latitude
+  longitude: !secret longitude
+  # Impacts weather/sunrise data (altitude above sea level in meters)
+  elevation: !secret elevation
+  # metric for Metric, imperial for Imperial
+  unit_system: imperial
+  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  time_zone: America/Chicago
+  # Customization file
+  customize: !include customize.yaml
+
+# Configure a default setup of Home Assistant (frontend, api, etc)
+default_config:
+
+lovelace:
+  mode: yaml
+
+frontend:
+  themes: !include themes.yaml
+
+discovery:
+  ignore:
+  - roku
+
+# Uncomment this if you are using SSL/TLS, running in Docker container, etc.
+# http:
+#   base_url: example.duckdns.org:8123
+
+weather:
+  - platform: darksky
+    api_key: !secret dark_sky_api_key
+    mode: daily
+
+# Text to speech
+tts:
+  - platform: google
+
+zwave:
+  usb_path: /dev/ttyACM0
+  autoheal: false
+
+light:
+  - platform: group
+    name: Mudroom Lights
+    entities:
+      - light.linear_lb60z_1_dimmable_led_light_bulb_level
+      - light.linear_lb60z_1_dimmable_led_light_bulb_level_2
+  - platform: group
+    name: Study Lights
+    entities:
+      - light.linear_lb60z_1_dimmable_led_light_bulb_level_3
+      - light.linear_lb60z_1_dimmable_led_light_bulb_level_4
+
+group: !include groups.yaml
+scene: !include scenes.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml
+panel_iframe:
+  configurator:
+    title: Configurator
+    icon: mdi:wrench
+    url: http://hassio.local:3218

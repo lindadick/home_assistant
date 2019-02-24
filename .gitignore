@@ -1,0 +1,19 @@
+# Ignore folders
+.cloud
+.storage
+deps
+ssh
+tts
+www
+
+# Ignore some files
+entity_registry.yaml
+home-assistant.log
+home-assistant_v2.db
+known_devices.yaml
+options.xml
+OZW_Log.txt
+pyozw.sqlite
+secrets.yaml
+zigbee.db
+zwcfg_0xd9eae46a.xml

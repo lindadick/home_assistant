@@ -1,0 +1,73 @@
+#- name: Study Bright
+#  entities:
+#    light.light__study_1_level:
+#      brightness_pct: 100
+#      state: on
+#    light.light__study_2_level:
+#      brightness_pct: 100
+#      state: on
+
+#- name: Study Dim
+#  entities:
+#    light.light__study_1_level:
+#      brightness_pct: 10
+#      state: on
+#    light.light__study_2_level:
+#      brightness_pct: 10
+#      state: on
+
+- name: Living Room Bright
+  entities:
+    light.level:
+      brightness_pct: 100
+      color_temp: 500
+      state: on
+
+- name: RGBW Warm
+  entities:
+    light.ledvance_a19_rgbw_0001e17d_1:
+      brightness_pct: 100
+      color_temp: 500
+      state: on
+
+- name: RGBW Off
+  entities:
+    light.ledvance_a19_rgbw_0001e17d_1:
+      state: off
+
+#- name: Living Room Bright & Cool
+#  entities:
+#    light.ledvance_a19_rgbw_0001e17d_1:
+#      brightness_pct: 100
+#      color_temp: 153
+#      state: on
+
+- name: Living Room Dim
+  entities:
+    light.level:
+      brightness: 1
+      state: on
+
+#- name: Living Room Dim & Cool
+#  entities:
+#    light.ledvance_a19_rgbw_0001e17d_1:
+#      brightness_pct: 20
+#      color_temp: 153
+#      state: on
+
+- name: Living Room Off
+  entities:
+    light.level:
+      state: off
+
+#- name: Upstairs Bright
+#  entities:
+#    light.light__upstairs_level:
+#      brightness_pct: 100
+#      state: on
+
+#- name: Upstairs Dim
+#  entities:
+#    light.light__upstairs_level:
+#      brightness_pct: 10
+#      state: on

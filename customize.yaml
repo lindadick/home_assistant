@@ -1,0 +1,13 @@
+light.linear_lb60z_1_dimmable_led_light_bulb_level_5:
+  icon: mdi:lamp
+  friendly_name: Living Room Lamp
+light.linear_lb60z_1_dimmable_led_light_bulb_level_6:
+  icon: mdi:lamp
+  friendly_name: Study Table Lamp
+light.ledvance_a19_rgbw_0001e17d_1:
+  icon: mdi:lamp
+  friendly_name: Linda's Office Lamp
+light.mudroom_lights:
+  icon: mdi:ceiling-light
+light.study_lights:
+  icon: mdi:ceiling-light

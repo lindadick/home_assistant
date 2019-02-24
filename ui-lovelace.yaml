@@ -1,0 +1,123 @@
+# See https://github.com/seangreen2/home_assistant for amazing ideas
+title: Home
+
+resources:
+ - url: /local/slider-entity-row.js
+   type: js
+ - url: /local/light-entity-row.js
+   type: js
+
+views:
+  - path: default_view
+    title: Home
+    icon: 'mdi:home'
+    cards:
+      - type: weather-forecast
+        entity: weather.dark_sky
+      - type: iframe
+        title: Now Playing on Robinet Disco US
+        name: Disco
+        url: http://192.168.1.10/disco/widget.html
+        aspect_ratio: 33%
+      - type: horizontal-stack
+        cards:
+          - type: light
+            entity: light.linear_lb60z_1_dimmable_led_light_bulb_level_5
+            name: Living Room Lamp
+          - type: light
+            entity: light.linear_lb60z_1_dimmable_led_light_bulb_level_6
+            name: Study Lamp
+      - type: horizontal-stack
+        cards:
+          - type: light
+            entity: light.study_lights
+            name: Study Ceiling
+          - type: light
+            entity: light.mudroom_lights
+            name: Mudroom Ceiling
+      - type: entities
+        title: Shades
+        show_header_toggle: false
+        entities:
+          - type: custom:slider-entity-row
+            entity: cover.graber_csz1_cellular_shade_level
+            name: "Living Room"
+          - type: custom:slider-entity-row
+            entity: cover.graber_csz1_cellular_shade_level_2
+            name: "Dining Room"
+          - type: custom:slider-entity-row
+            entity: cover.graber_csz1_cellular_shade_level_3
+            name: "Mudroom"
+          - type: custom:slider-entity-row
+            entity: cover.graber_csz1_cellular_shade_level_4
+            name: "Kitchen"
+          - type: custom:slider-entity-row
+            entity: cover.graber_csz1_cellular_shade_level_5
+            name: "Study"
+  - path: living
+    title: "Living Room"
+    icon: 'mdi:sofa'
+    cards:
+      - type: light
+        entity: light.linear_lb60z_1_dimmable_led_light_bulb_level_5
+        name: Living Room
+      - type: entities
+        title: Shades
+        show_header_toggle: false
+        entities:
+          - type: custom:slider-entity-row
+            entity: cover.graber_csz1_cellular_shade_level
+            name: "Living Room"
+          - type: custom:slider-entity-row
+            entity: cover.graber_csz1_cellular_shade_level_2
+            name: "Dining Room"
+          - type: custom:slider-entity-row
+            entity: cover.graber_csz1_cellular_shade_level_4
+            name: "Kitchen"
+      - type: entities
+        title: Scenes
+        show_header_toggle: false
+        entities:
+          - scene.living_room_bright
+          - scene.living_room_dim
+          - scene.living_room_off
+  - path: linda
+    title: "Linda's Office"
+    icon: 'mdi:keyboard'
+    cards:
+    - type: entities
+      name: "RGB Light"
+      entities:
+        - type: "custom:light-entity-row"
+          entity: light.ledvance_a19_rgbw_0001e17d_1
+          showColorPicker: true
+          showColorSliders: true
+  - path: disco
+    title: "Disco"
+    icon: 'mdi:music'
+    panel: true
+    cards:
+      - type: iframe
+        url: http://192.168.1.10/disco
+        aspect_ratio: 75%
+  - path: auto
+    title: Automations
+    icon: 'mdi:creation'
+    cards:
+      - type: entities
+        title: Automations
+        show_header_toggle: false
+        entities:
+          - automation.daytime
+          - automation.dusk
+          - automation.nighttime
+          - automation.lights_out
+      - type: entities
+        title: Scenes
+        show_header_toggle: false
+        entities:
+          - scene.living_room_bright
+          - scene.living_room_dim
+          - scene.living_room_off
+          - scene.rgbw_warm
+          - scene.rgbw_off
