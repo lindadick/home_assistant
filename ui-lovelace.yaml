@@ -6,6 +6,8 @@ resources:
    type: js
  - url: /local/light-entity-row.js
    type: js
+#  - url: /local/disco-now-playing.js
+#   type: js
 
 views:
   - path: default_view
@@ -19,6 +21,8 @@ views:
         name: Disco
         url: http://192.168.1.10/disco/widget.html
         aspect_ratio: 33%
+    #   - type: custom:disco-now-playing
+    #     title: New Disco Card
       - type: horizontal-stack
         cards:
           - type: light
@@ -26,7 +30,7 @@ views:
             name: Living Room Lamp
           - type: light
             entity: light.linear_lb60z_1_dimmable_led_light_bulb_level_6
-            name: Study Lamp
+            name: Bedside Lamp
       - type: horizontal-stack
         cards:
           - type: light
@@ -99,7 +103,7 @@ views:
     cards:
       - type: iframe
         url: http://192.168.1.10/disco
-        aspect_ratio: 75%
+        aspect_ratio: 100%
   - path: auto
     title: Automations
     icon: 'mdi:creation'
@@ -112,6 +116,9 @@ views:
           - automation.dusk
           - automation.nighttime
           - automation.lights_out
+          - automation.wake_linda_1
+          - automation.wake_linda_2
+          - automation.wake_linda_3
       - type: entities
         title: Scenes
         show_header_toggle: false

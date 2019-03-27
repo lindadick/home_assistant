@@ -92,7 +92,7 @@
     seconds: 33
   action:
   - data:
-      entity_id: group.all_lights
+      entity_id: group.downstairs_lights
     service: light.turn_off
   - data:
       entity_id: group.all_covers
@@ -175,3 +175,33 @@
   - data:
       entity_id: group.all_lights
     service: light.turn_off
+- id: bedroom_wake
+  alias: Wake Linda 1
+  trigger:
+  - at: '6:20'
+    platform: time
+  action:
+    - service: light.turn_on
+      entity_id: light.linear_lb60z_1_dimmable_led_light_bulb_level_6
+      data:
+        brightness_pct: 33
+- id: bedroom_wake
+  alias: Wake Linda 2
+  trigger:
+  - at: '6:25'
+    platform: time
+  action:
+    - service: light.turn_on
+      entity_id: light.linear_lb60z_1_dimmable_led_light_bulb_level_6
+      data:
+        brightness_pct: 66
+- id: bedroom_wake
+  alias: Wake Linda 3
+  trigger:
+  - at: '6:30'
+    platform: time
+  action:
+    - service: light.turn_on
+      entity_id: light.linear_lb60z_1_dimmable_led_light_bulb_level_6
+      data:
+        brightness_pct: 100
