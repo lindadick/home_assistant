@@ -180,6 +180,14 @@
   trigger:
   - at: '6:20'
     platform: time
+  condition:
+    condition: time
+    weekday:
+      - mon
+      - tues
+      - wed
+      - thurs
+      - fri
   action:
     - service: light.turn_on
       entity_id: light.linear_lb60z_1_dimmable_led_light_bulb_level_6
@@ -190,6 +198,14 @@
   trigger:
   - at: '6:25'
     platform: time
+  condition:
+    condition: time
+    weekday:
+      - mon
+      - tues
+      - wed
+      - thurs
+      - fri
   action:
     - service: light.turn_on
       entity_id: light.linear_lb60z_1_dimmable_led_light_bulb_level_6
@@ -200,6 +216,14 @@
   trigger:
   - at: '6:30'
     platform: time
+  condition:
+    condition: time
+    weekday:
+      - mon
+      - tues
+      - wed
+      - thurs
+      - fri
   action:
     - service: light.turn_on
       entity_id: light.linear_lb60z_1_dimmable_led_light_bulb_level_6
