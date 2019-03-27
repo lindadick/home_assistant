@@ -175,7 +175,7 @@
   - data:
       entity_id: group.all_lights
     service: light.turn_off
-- id: bedroom_wake
+- id: bedroom_wake_1
   alias: Wake Linda 1
   trigger:
   - at: '6:20'
@@ -185,7 +185,7 @@
       entity_id: light.linear_lb60z_1_dimmable_led_light_bulb_level_6
       data:
         brightness_pct: 33
-- id: bedroom_wake
+- id: bedroom_wake_2
   alias: Wake Linda 2
   trigger:
   - at: '6:25'
@@ -195,7 +195,7 @@
       entity_id: light.linear_lb60z_1_dimmable_led_light_bulb_level_6
       data:
         brightness_pct: 66
-- id: bedroom_wake
+- id: bedroom_wake_3
   alias: Wake Linda 3
   trigger:
   - at: '6:30'

@@ -63,7 +63,6 @@ light:
       - light.linear_lb60z_1_dimmable_led_light_bulb_level_4
       - light.linear_lb60z_1_dimmable_led_light_bulb_level_5
 
-sensor: !include sensors.yaml
 group: !include groups.yaml
 scene: !include scenes.yaml
 automation: !include automations.yaml
